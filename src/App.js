@@ -1,17 +1,10 @@
 import React from 'react';
 import './App.css';
-import CounterControl from './components/counterControl'
-import CounterOutput from './components/counterOutput'
-
+import Counter from './containers/counter'
 function App() {
   return (
     <div>
-      <div>
-        < CounterOutput />
-      </div>
-      <div>
-        <CounterControl />
-      </div>
+      <Counter />
     </div>
   );
 }

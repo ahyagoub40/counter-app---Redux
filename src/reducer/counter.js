@@ -2,10 +2,10 @@ const initialState = {
   counter: 0
 }
 const counter = function (state = initialState, action) {
-  const add = (num) => ({ counter: state.counter + num })
-  const subtract = (num) => ({ counter: state.counter - num })
-  const increment = () => ({ counter: state.counter++ })
-  const decrement = () => ({ counter: state.counter-- })
+  const add = () => ({ counter: state.counter + action.num })
+  const subtract = () => ({ counter: state.counter - action.num })
+  const increment = () => ({ counter: state.counter + 1 })
+  const decrement = () => ({ counter: state.counter - 1 })
 
   const options = {
     ADD: add,
