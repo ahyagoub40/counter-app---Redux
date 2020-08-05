@@ -1,15 +1,21 @@
-import { connect } from "react-redux";
+import React from 'react'
+import { useSelector, useDispatch } from "react-redux";
 import { add, subtract, increment, decrement } from '../reducer/action'
 
-import Counter from '../component/counter'
+const Counter = () => {
+  const counter = useSelector(state => state.counter);
+  const dispatch = useDispatch();
 
-const mapStateToProps = state => ({
-  counter: state.counter
-})
-const mapDispatchToProps = (dispatch) => ({
-  increase: () => dispatch(increment()),
-  decrease: () => dispatch(decrement()),
-  subtractvalue: () => dispatch(subtract()),
-  addvalue: () => dispatch(add())
-})
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+  return (
+    <div>
+      <h1>Counter</h1>
+      <h2>{counter}</h2>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}> Decrement</button>
+      <button onClick={() => dispatch(add())}> Add 5</button>
+      <button onClick={() => dispatch(subtract())}> Subtract 5</button >
+    </div >
+  )
+}
+
+export default Counter;

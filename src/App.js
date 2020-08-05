@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
 import Counter from './containers/counter'
-function App() {
+import reducer from './reducer/counter'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+const App = () => {
+  const store = createStore(reducer);
+
   return (
-    <div>
+    <Provider store={store}>
       <Counter />
-    </div>
+    </Provider>
   );
 }
 
