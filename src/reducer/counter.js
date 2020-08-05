@@ -1,6 +1,7 @@
 const initialState = {
   counter: 0
-}
+};
+
 const counter = function (state = initialState, action) {
   const add = () => ({ counter: state.counter + action.num })
   const subtract = () => ({ counter: state.counter - action.num })
@@ -14,7 +15,8 @@ const counter = function (state = initialState, action) {
     DECREMENT: decrement,
     default: () => state
   }
+
   return (options[action.type] || options.default)()
 }
 
-export default counter
+export default counter;
